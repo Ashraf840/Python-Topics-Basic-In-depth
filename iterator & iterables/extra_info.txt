@@ -1,0 +1,55 @@
+######### This practise is meant to learn the "yield" method in Python.
+
+Link:  https://www.youtube.com/watch?v=jTYiNjvnHZY
+
+
+
+Dunder/ Magic Method:  
+    A method consists of two prefix & suffix underscores are called dunder/ magic methods aka double_underscore method.
+
+
+
+[ NOTED BRIEF ]: Just because something is iterable, doesn't mean that it's an iterator.
+    An iterator is an object with a state, so that, it remembers where it's at during it's iteration. An it knows how to fetch it's next value using the dunder-next method. And when it doesn't have the next value, then it raises it's 'StopIteration' exception. 
+
+
+
+
+>>>>>> Iterable
+    Broadly speaking, some that can be looped over. But more specifically, it should return an iterator-object from it's dunder-iter method.
+
+
+
+
+
+>>>>>> Iterator
+# Build a class, which behaves like an built-in range function.
+[ NB ]: An iterator gets returned from dunder-iter method. And it should return the dunder-next() method. 
+    
+[ IMPORTANT ] An iterator which is returned from the dunder-iter method, must return a dunder-next() method which access it's elements in the container one at a time.
+
+    It'll be an iterator-class, which can be an iterable as well.
+    Thus, we can use both the for-loop or the manual-dunder-next() method to iterate the items using this iterator-class-object.
+        An iterator will only fetch one value at a time.
+        It comes in handy while writing memory-efficient programs. Because sometimes, there are a lot of values, which is difficult to hold them 
+        all in the memory if we want to put/ store them in a list/ tuple. 
+        But if we simply use an iterator in such scenario, then we can loop over one value at a time until it gets exhausted.
+
+Real-life scenario:
+    While writing a password-cracker, & want to brute-force it by checking all the possible passwords using a certain group of characters.
+        While there will be so many possible passwords, that we cannot hold them in a single list/ tuple, then our machine will just run out-of-memory.
+        In such scenario, we can use an iterator to loop through to all those possibilities one at a time. 
+
+
+
+
+
+>>>>>> Generators (also an iterator)
+It create easy to read iterators, unlike an custom-iterator-class.
+They look a lot like normal function, but instead of returing a result, they instead yield (produce/bring/provide) a value THEY INSTEAD YIELD (produce/bring/provide) A VALUE. 
+And when they yeild (produce/bring/provide) a value, they keeps the state until the generator runs again. 
+[ NOTE ]:  Generators are iterators as well. But the dunder-iter() method & the dunder-next() method created automatically.
+    Thus, we don't need to explicitly create those dunder-methods, like we did them while creating the iterator-class "MyRange()" inside the "iterator & iterables\class_myRange.py" file.
+
+A generator function is created inside the "generators\generators.py" file.
+[ NOTE ]: It will always yield(produce/bring/provide) a value.
