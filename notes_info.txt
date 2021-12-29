@@ -16,7 +16,7 @@ Dunder/ Magic Method:
 
 
 >>>>>> Iterable
-    Broadly speaking, some that can be looped over. But more specifically, it should return an iterator-object from it's dunder-iter method.
+    Broadly speaking, something that can be looped over. But more specifically, it should return an iterator-object from it's dunder-iter method.
 
 
 
