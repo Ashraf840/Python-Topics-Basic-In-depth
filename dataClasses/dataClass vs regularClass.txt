@@ -1,0 +1,39 @@
+########### DataClass vs Regular Class ###########
+
+
+Article Ref:  https://medium.com/dev-today/python-data-classes-will-save-you-hours-and-bring-back-the-joy-of-writing-classes-7559a1718318
+Video Ref:  https://www.youtube.com/watch?v=vBH6GRJ1REM
+[ Multiple Miscellaneous Videos Refs ]:  https://www.youtube.com/watch?v=vBH6GRJ1REM&list=RDCMUCaiL2GDNpLYH6Wokkk1VNcg&start_radio=1
+
+[ NOTE ]:  DataClass can save hours of daily life while writing boilerplate codes.
+
+
+[ Usage of dunder-methods ]:   "__repr__", "__eq__"
+
+
+
+# [ Construuctor ]:  Don't need to create constructor while creating a class using "dataClass" as a decorator of that class.
+
+# [ Visual Representation ]:  While using "dataClass" as a decorator, we can view the variables of that class just by calling the class.
+
+# [ Auto Comparison between instances ]:  By using the "dataClass" decorator, we can view the comparison between instances of that class. 
+        Because the "dataClass" decorator automatically implement the "__eq__" method to the class.
+
+
+
+# [ Use-case scenario ]
+    Let's assume we are working on a mid to big-sized project. The project is a 
+    web-app & there people can make comments. So far, comments have been like a tuple or
+    dictionaries with auto-generated ids. But gradually the project is getting bigger to 
+    store the comments in a tuple or a dictrionary.
+    Thus for the sake of readibility, we're gonna make the comments to have it's own class.
+
+    So we make a simple "Comment" class that will have "id" as integer & "text" as string.
+    The "__repr__" method will display the vairables of the object of that class.
+    Then we set the "__eq__" method to check the equality of the two instances of the class.
+    Then we want to use the "__gt__", "__lt__", "__ge__", "__le__", "__eq__", "__ne__" in the class "Car" class inside the "dataClasses\dataClass.py" file.
+
+    But after that, if we want to create another attribute (variable) of that class, then we have to implement that in all the other methods of the class, which can become daunting.
+    For a life-saver, we can use the "dataClass" from the "dataClasses" module. By default, these dunder-methods have all implemented inside the "dataClass" decorator.
+    By to comapare between two specifc class-attributes, we need to explicitly define that using these dunder-methods.
+
