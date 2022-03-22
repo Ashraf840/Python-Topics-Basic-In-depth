@@ -1,0 +1,39 @@
+## The differences between list, tuple, set, dictionary.
+
+
+### Homogeneous/Non-homogeneous
+# All the data structure (list, tuple, set, dictionary) are able to contain non-homogeneous types of values
+
+
+
+
+### Duplicate Element
+# support: List, Tuple,
+## Does Not Support: Set
+# dictionary doesn't allow duplicate keys.
+
+
+
+
+### Mutability/ Modification
+## Support: List, Set, Dictionary
+## Does Not Support: Tuple
+
+
+
+### Ordered/ Unordered
+## Support: List, Tuple, Dictionary
+## Does Not Support: Set
+
+
+
+# [display elements from a list/tuple]
+# It'll display the elements as given below. Meaning, it'll display the elements in an ordered format based on the index of the list/tuple.
+
+
+
+# [display elements randomly from a set]
+# It'll display the elements of a set in random orders regardless of as the set was initially built.
+
+
+

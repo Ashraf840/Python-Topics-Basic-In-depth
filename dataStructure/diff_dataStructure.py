@@ -65,7 +65,7 @@ var_set_letter = {'a','f','c','d','e','b'}
 # print(var_set_letter)
 
 # ----- Add 'Set' Elem (String) using 'add()' func -----
-myset = {"hi", '2', "bye", "Hello World"}
+# myset = {"hi", '2', "bye", "Hello World"}
 # myset.add('test')
 # print(myset)
 
@@ -76,11 +76,27 @@ myset = {"hi", '2', "bye", "Hello World"}
 # myset = {1,2,3,4,5,7,8,9,10}    # missing elem 6
 # myset = {2,3,5,7,10,8,4}
 # myset = {2,3,4,5,6,7,8,9,10,11}
-myset.add(40)
-print(myset)
+# myset.add(40)
+# print(myset)
 
 
 # print(myset)    # always randomized cause of existing different datatypes
 # # loop through the elements of myset
 # for a in myset:
 #     print(a)
+
+
+
+
+var_set_conv_list = {'a','b','c','d'}
+var_dict = {
+    'a': 1,
+    'b': 2,
+    'c': 3,
+    'd': 4,
+}
+
+
+x = list(var_set_conv_dict)
+print(type(x))
+
