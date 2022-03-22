@@ -1,0 +1,9 @@
+# How to convert a list into a dictionary?
+# How to convert a set into a dictionary?
+# How to convert a tuple into a dictionary?
+
+
+# How to convert a dictionary into a list?
+# How to convert a dictionary into a set?
+# How to convert a dictionary into a tuple?
+
