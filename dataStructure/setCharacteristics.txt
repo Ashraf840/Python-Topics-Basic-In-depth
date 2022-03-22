@@ -1,0 +1,22 @@
+"""
+Characteristics of Set (Data Structure)
+---------------------------------------
+-- IMPORTANT --
+By default set-variable wants to organize the float/integer elements in ascending order, if the set only contains all the elems as integer/float at once.
+----------------
+
+
+1. Set will only print the unique values dropping the duplicates.
+2. Set will display the values in an ascending order if all the elems in the set-variable contains the same data (integer, float).
+3. Set will display the elems in random order if that set contain string elems. And everytime it'll start randomizing the elems of that set.
+4. Set will not display the elems properly in ascending order if the elems contain both the integer & float values together.
+5. Set will not display the elems in alphabetically sorted order if the set contains of strings/characters.
+6. The set-elems will remove the least value from the set-elems using the 'pop()' func, only if the set only contains integer/float.
+    That means, the 'pop()' func will remove the first elem of the set.
+-- Adding New Elem --
+7. ['Char'/'String' type set]: The 'add()' func will add any 'char'/'string' value randomly inside the set variable.
+8. ['Integer/Float' - Unordered]: It the integer/float value-elems exist (which can be sort sequentially by the characteristics of set) in the set-variable then the new elem will be appended at the end of the set.
+    But if there is any value missing in the range, then the new value will be appended at the place of missing value.
+9. ['Integer/Float' - Ordered]: If the elems in the set-variable is pre-arranged sequentially. Then the new elem will be appended at the end regardless of any missing element in the sequence of the range.
+10. [Mix datatype set]: The new element will be added in any random position of the set variable everytime.
+"""
