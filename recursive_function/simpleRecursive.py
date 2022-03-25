@@ -1,3 +1,8 @@
+"""
+[NB]: The recursive function is all about getting inside the same function through the function itself.
+"""
+
+
 def count_down(start):
     # count the nums down till the countDown is greater than 0
     if start > 0:
