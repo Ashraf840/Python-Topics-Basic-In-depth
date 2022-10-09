@@ -4,9 +4,13 @@ from decorators import check_pin, halt_create_pin
 
 class Atm:
     def __init__(self):
-        self.pin = ''
-        self.balance = 0
+        self.__pin = ''
+        self.__balance = 0
         self.menu()
+    
+    @property
+    def pin(self):
+        return self.__pin
 
     def menu(self):
         user_input = int(input("""
@@ -39,25 +43,25 @@ class Atm:
     @halt_create_pin
     def create_pin(self):
         user_input = input("Create pin: ")
-        self.pin = user_input
+        self.__pin = user_input
         print("Pin set succesfully!")
         return self.menu()
 
     @check_pin
     def deposit(self):
         deposit_value = float(input("How much you want to deposit? "))
-        self.balance = deposit_value
-        print(f"{self.balance} is credited to your account!")
+        self.__balance = deposit_value
+        print(f"{self.__balance} is credited to your account!")
         return self.menu()
     
     @check_pin
     def withdraw(self):
         withdraw_value = float(input("How much you want to withdraw? "))
-        if self.balance > withdraw_value:
-            self.balance = self.balance - withdraw_value
+        if self.__balance > withdraw_value:
+            self.__balance = self.__balance - withdraw_value
             print(f"""
                 {withdraw_value} is withdrawn from your account!
-                Current Balance: {self.balance}
+                Current Balance: {self.__balance}
             """)
             self.menu()
         else:
@@ -66,16 +70,16 @@ class Atm:
     
     @check_pin
     def check_balance(self):
-        print(f"Your balance is: {self.balance}")
+        print(f"Your balance is: {self.__balance}")
         self.menu()
     
     @check_pin
     def reset_pin(self):
         new_pin = input("Enter new pin: ")
-        if self.pin == new_pin:
+        if self.__pin == new_pin:
             print("Cannot create a new pin similar to your previous pin!")
             return self.reset_pin()
         else:
-            self.pin = new_pin
+            self.__pin = new_pin
             print("New pin is successfully set!")
             return self.menu()
