@@ -11,6 +11,10 @@ class Atm:
     @property
     def pin(self):
         return self.__pin
+    
+    @pin.setter
+    def pin(self):
+        self.reset_pin()
 
     def menu(self):
         user_input = int(input("""
