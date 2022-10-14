@@ -15,7 +15,7 @@ coreyms.com
 321-555-4321
 123.555.1234
 123*555*1234
-800-555-1234
+800@555@1234
 900-555-1234
 
 Mr. Schafer
@@ -70,12 +70,15 @@ sentence = 'Start a sentence and then bring it to an end'
 
 
 
-# Scenario: Pattern to find the phone nums within the multiline string.
-# To match the first 3 digits of the phone nums use the "\d\d\d".
-# To match the dot(.) or hyphen(-) in between, use dot(.) in the pattern.
-# To match the middle 3 digits, again use the "\d\d\d". Use dot(.) to match whether the dot/hyphen.
-# Then the last 4 digits will be matched using "\d\d\d\d".
-pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d')
+# # Scenario: Pattern to find the phone nums within the multiline string.
+# # To match the first 3 digits of the phone nums use the "\d\d\d".
+# # To match the dot(.) or hyphen(-) in between, use dot(.) in the pattern.
+# # To match the middle 3 digits, again use the "\d\d\d". Use dot(.) to match whether the dot/hyphen.
+# # Then the last 4 digits will be matched using "\d\d\d\d".
+# pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d') # matches any char in the phone-numbers
+
+# Use character-set (brackets) to define which chars to be considered
+pattern = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d') # matches only the dot(.) or hypen(-) chars in the phone-numbers
 
 # Use the pattern that matches literal characters into the string
 matches = pattern.finditer(text_to_search)
