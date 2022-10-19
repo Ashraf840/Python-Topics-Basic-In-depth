@@ -126,6 +126,8 @@ sentence = 'Start a sentence and then bring it to an end'
 # pattern = re.compile(r'Mr\.?\s[A-Z]?\w+')  # includes the rest of the chars in the firstname; matches "Mr. T", since the pattern expects whether only an uppercase char or an uppercase char followed by other chars
 pattern = re.compile(r'Mr\.?\s[A-Z]\w*')  # includes 0 or more chars after the uppercase letter of the firstname
 
+# TIMESTAMP: 00:31:00
+
 
 # Use the pattern that matches literal characters into the string
 matches = pattern.finditer(text_to_search)
