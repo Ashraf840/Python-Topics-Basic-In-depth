@@ -112,9 +112,19 @@ sentence = 'Start a sentence and then bring it to an end'
 # Scenario: Matches the characters which are not starting with 'b' followed by 'at' from the string using caret (^) in a characterset.
 # pattern = re.compile(r'[^b]at')
 
-# Scenario: Matches the phone numbers using quantifiers
-pattern = re.compile(r'\d{3}.\d{3}.\d{4}')
+# # Scenario: Matches the phone numbers using quantifiers
+# pattern = re.compile(r'\d{3}.\d{3}.\d{4}')
 
+
+# Scenario: Matches the person-names with the prefixes "Mr"
+# pattern = re.compile(r'Mr\.')   # to match the non-unicode-chars dot(.) as suffix of "Mr"
+# pattern = re.compile(r'Mr\.?')   # to match both the non-unicode-chars dot(.) or not-dot as suffix of "Mr". 0 or 1 chars by the "?"
+# pattern = re.compile(r'Mr\.?\s')   # inlcudes matching a whitespace after by "\s" matches only the "Mr./Mr "
+# pattern = re.compile(r'Mr\.?\s[A-Z]') # inlcudes the uppercase letter of the firstname
+# pattern = re.compile(r'Mr\.?\s[A-Z]\w')  # includes one more letter after the uppercase chars in the firstname
+# pattern = re.compile(r'Mr\.?\s[A-Z]\w+')  # includes the rest of the chars in the firstname; doesn't match the "Mr. T", since this pattern expects one or more chars after the uppercase
+# pattern = re.compile(r'Mr\.?\s[A-Z]?\w+')  # includes the rest of the chars in the firstname; matches "Mr. T", since the pattern expects whether only an uppercase char or an uppercase char followed by other chars
+pattern = re.compile(r'Mr\.?\s[A-Z]\w*')  # includes 0 or more chars after the uppercase letter of the firstname
 
 
 # Use the pattern that matches literal characters into the string
