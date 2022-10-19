@@ -13,9 +13,13 @@ MetaCharacters (Need to be escaped):
 coreyms.com
 
 321-555-4321
+879-145-7457
+321.--555.--4321
 123.555.1234
 123*555*1234
 800@555@1234
+800#555#1234
+800-555-1234
 900-555-1234
 
 Mr. Schafer
@@ -23,6 +27,12 @@ Mr Smith
 Ms Davis
 Mrs. Robinson
 Mr. T
+
+cat
+pat
+mat
+bat
+
 '''
 
 # print(r"\tTab")  # Regular expression will interpret the string before Python doing anything
@@ -78,7 +88,34 @@ sentence = 'Start a sentence and then bring it to an end'
 # pattern = re.compile(r'\d\d\d.\d\d\d.\d\d\d\d') # matches any char in the phone-numbers
 
 # Use character-set (brackets) to define which chars to be considered
-pattern = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d') # matches only the dot(.) or hypen(-) chars in the phone-numbers
+# pattern = re.compile(r'\d\d\d[-.]\d\d\d[-.]\d\d\d\d') # matches only the dot(.) or hypen(-) chars in the phone-numbers
+# pattern = re.compile(r'\d\d\d[-.#]\d\d\d[-.#]\d\d\d\d') # matches only the dot(.) or hypen(-) or hash(#) chars in the phone-numbers
+# pattern = re.compile(r'\d\d\d[-.#]+\d\d\d[-.#]+\d\d\d\d') # matches only the dot(.) or hypen(-) or hash(#) chars in the phone-numbers. One or more of the multiple choices
+
+# Matches the nums 
+# pattern = re.compile(r'[89]00-\d\d\d-\d\d\d\d')       # Matches only 800 or 900 as the first 3 digits from the numbers with hyphen(-) only
+# pattern = re.compile(r'[89]\d\d-\d\d\d-\d\d\d\d')     # matches nums starts with 8 or 9 with the defined pattern
+
+# Scenario: Matches only the characters (nums) form 1 to 5 the string.
+# pattern = re.compile(r'[1-5]')
+
+# Scenario: Matches only the characters (lower-case alphabets) form a to z the string.
+# pattern = re.compile(r'[a-z]')
+
+# Scenario: Matches only the characters (both lower-case & upper-case alphabets) form aA to zZ the string.
+# pattern = re.compile(r'[a-zA-Z]')
+# pattern = re.compile(r'[a-z-A-Z]')  # includes lower & upper case alphabets, also the hyphens (-).
+
+# Scenario: Matches only the characters which are not form aA to zZ the string using caret (^) in a characterset.
+# pattern = re.compile(r'[^a-zA-Z]')
+
+# Scenario: Matches the characters which are not starting with 'b' followed by 'at' from the string using caret (^) in a characterset.
+# pattern = re.compile(r'[^b]at')
+
+# Scenario: Matches the phone numbers using quantifiers
+pattern = re.compile(r'\d{3}.\d{3}.\d{4}')
+
+
 
 # Use the pattern that matches literal characters into the string
 matches = pattern.finditer(text_to_search)

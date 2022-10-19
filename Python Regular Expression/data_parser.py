@@ -1,4 +1,7 @@
-
+"""
+Import all the phone numbers from the given text file.
+[ Different types of scenarios are built inside the "simple.py" file ]
+"""
 
 import re
 
